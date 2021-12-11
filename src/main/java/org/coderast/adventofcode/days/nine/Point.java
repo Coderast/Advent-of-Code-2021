@@ -2,7 +2,7 @@ package org.coderast.adventofcode.days.nine;
 
 import com.google.common.base.Objects;
 
-class Point {
+public class Point {
     private final int x;
     private final int y;
 
