@@ -17,6 +17,9 @@ import org.coderast.adventofcode.days.ten.TenDayTaskResolverSecond;
 import org.coderast.adventofcode.days.three.ThreeDayInputSupplier;
 import org.coderast.adventofcode.days.three.ThreeDayTaskResolverFirst;
 import org.coderast.adventofcode.days.three.ThreeDayTaskResolverSecond;
+import org.coderast.adventofcode.days.twelve.TwelveDayInputSupplier;
+import org.coderast.adventofcode.days.twelve.TwelveDayTaskResolverFirst;
+import org.coderast.adventofcode.days.twelve.TwelveDayTaskResolverSecond;
 import org.coderast.adventofcode.days.two.TwoDayInputSupplier;
 import org.coderast.adventofcode.days.two.TwoDayTaskResolverFirst;
 import org.coderast.adventofcode.days.two.TwoDayTaskResolverSecond;
@@ -52,7 +55,9 @@ public class TaskSolvingExecutorFactory {
             case 11 -> part == 1
                     ? new TaskSolvingExecutorImpl<>(new ElevenDayInputSupplier(), new ElevenDayTaskResolverFirst())
                     : new TaskSolvingExecutorImpl<>(new ElevenDayInputSupplier(), new ElevenDayTaskResolverSecond());
-            //case 12 -> ;
+            case 12 -> part == 1
+                    ? new TaskSolvingExecutorImpl<>(new TwelveDayInputSupplier(), new TwelveDayTaskResolverFirst())
+                    : new TaskSolvingExecutorImpl<>(new TwelveDayInputSupplier(), new TwelveDayTaskResolverSecond());
             //case 13 -> ;
             //case 14 -> ;
             //case 15 -> ;
