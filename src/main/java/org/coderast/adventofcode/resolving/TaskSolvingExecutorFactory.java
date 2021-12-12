@@ -1,6 +1,9 @@
 package org.coderast.adventofcode.resolving;
 
 import com.google.common.base.Preconditions;
+import org.coderast.adventofcode.days.eight.EightDayInputSupplier;
+import org.coderast.adventofcode.days.eight.EightDayTaskResolverFirst;
+import org.coderast.adventofcode.days.eight.EightDayTaskResolverSecond;
 import org.coderast.adventofcode.days.eleven.ElevenDayInputSupplier;
 import org.coderast.adventofcode.days.eleven.ElevenDayTaskResolverFirst;
 import org.coderast.adventofcode.days.eleven.ElevenDayTaskResolverSecond;
@@ -45,7 +48,9 @@ public class TaskSolvingExecutorFactory {
             //case 5 -> ;
             //case 6 -> ;
             //case 7 -> ;
-            //case 8 -> ;
+            case 8 -> part == 1
+                    ? new TaskSolvingExecutorImpl<>(new EightDayInputSupplier(), new EightDayTaskResolverFirst())
+                    : new TaskSolvingExecutorImpl<>(new EightDayInputSupplier(), new EightDayTaskResolverSecond());
             case 9 -> part == 1
                     ? new TaskSolvingExecutorImpl<>(new NineDayInputSupplier(), new NineDayTaskResolverFirst())
                     : new TaskSolvingExecutorImpl<>(new NineDayInputSupplier(), new NineDayTaskResolverSecond());
