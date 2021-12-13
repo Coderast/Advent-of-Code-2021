@@ -14,9 +14,15 @@ import org.coderast.adventofcode.days.one.OneDayInputSupplier;
 import org.coderast.adventofcode.days.one.OneDayTaskResolver;
 import org.coderast.adventofcode.days.one.OneDayTaskResolverFirst;
 import org.coderast.adventofcode.days.one.OneDayTaskResolverSecond;
+import org.coderast.adventofcode.days.seven.SevenDayInputSupplier;
+import org.coderast.adventofcode.days.seven.SevenDayTaskResolverFirst;
+import org.coderast.adventofcode.days.seven.SevenDayTaskResolverSecond;
 import org.coderast.adventofcode.days.ten.TenDayInputSupplier;
 import org.coderast.adventofcode.days.ten.TenDayTaskResolverFirst;
 import org.coderast.adventofcode.days.ten.TenDayTaskResolverSecond;
+import org.coderast.adventofcode.days.thirteen.ThirteenDayInputSupplier;
+import org.coderast.adventofcode.days.thirteen.ThirteenDayTaskResolverFirst;
+import org.coderast.adventofcode.days.thirteen.ThirteenDayTaskResolverSecond;
 import org.coderast.adventofcode.days.three.ThreeDayInputSupplier;
 import org.coderast.adventofcode.days.three.ThreeDayTaskResolverFirst;
 import org.coderast.adventofcode.days.three.ThreeDayTaskResolverSecond;
@@ -47,7 +53,9 @@ public class TaskSolvingExecutorFactory {
             //case 4 -> ;
             //case 5 -> ;
             //case 6 -> ;
-            //case 7 -> ;
+            case 7 -> part == 1
+                    ? new TaskSolvingExecutorImpl<>(new SevenDayInputSupplier(), new SevenDayTaskResolverFirst())
+                    : new TaskSolvingExecutorImpl<>(new SevenDayInputSupplier(), new SevenDayTaskResolverSecond());
             case 8 -> part == 1
                     ? new TaskSolvingExecutorImpl<>(new EightDayInputSupplier(), new EightDayTaskResolverFirst())
                     : new TaskSolvingExecutorImpl<>(new EightDayInputSupplier(), new EightDayTaskResolverSecond());
@@ -63,7 +71,9 @@ public class TaskSolvingExecutorFactory {
             case 12 -> part == 1
                     ? new TaskSolvingExecutorImpl<>(new TwelveDayInputSupplier(), new TwelveDayTaskResolverFirst())
                     : new TaskSolvingExecutorImpl<>(new TwelveDayInputSupplier(), new TwelveDayTaskResolverSecond());
-            //case 13 -> ;
+            case 13 -> part == 1
+                    ? new TaskSolvingExecutorImpl<>(new ThirteenDayInputSupplier(), new ThirteenDayTaskResolverFirst())
+                    : new TaskSolvingExecutorImpl<>(new ThirteenDayInputSupplier(), new ThirteenDayTaskResolverSecond());
             //case 14 -> ;
             //case 15 -> ;
             //case 16 -> ;

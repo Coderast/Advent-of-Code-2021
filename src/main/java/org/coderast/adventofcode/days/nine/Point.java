@@ -3,6 +3,7 @@ package org.coderast.adventofcode.days.nine;
 import com.google.common.base.Objects;
 
 public class Point {
+    public static final Point ZERO = Point.of(0,0);
     private final int x;
     private final int y;
 
@@ -21,6 +22,12 @@ public class Point {
 
     public static Point of(final int x, final int y) {
         return new Point(x, y);
+    }
+
+    public static double distance(final Point left, final Point right) {
+        final double dx = left.getX() - right.getX();
+        final double dy = left.getY() - right.getY();
+        return Math.sqrt(dx*dx + dy*dy);
     }
 
     @Override
